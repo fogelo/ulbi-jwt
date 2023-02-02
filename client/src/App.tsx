@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    // const [state, setState] = useState({a: 1, b: 2})
+
+
+    return (
+        <div className="App">
+            <div>{JSON.stringify(state)}</div>
+            <button onClick={() => setState((prevState =>  {
+                console.log(prevState)
+                prevState.b
+                return prevState
+            }))}>inc
+            </button>
+        </div>
+    );
 }
 
 export default App;
